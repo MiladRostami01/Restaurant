@@ -1,0 +1,143 @@
+.hamburger-menu {
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    top: 10%;
+    right: 5%;
+    z-index: 300;
+
+    .menu {
+        @extend %fullspace;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        cursor: pointer;
+        transition: transform .5s;
+
+        &-line {
+            width: 100%;
+            height: 4px;
+            background-color: $color-primray;
+            transition: all .5s .5s;
+            transform-origin: right;
+        }
+    }
+}
+
+
+.logo {
+    @include flexlayout;
+    font-size: 70px;
+    color: $color-primray;
+    width: 110px;
+    height: 110px;
+    border: 3px solid $color-primray;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.main-name {
+    font-family: $font-sahel;
+    font-size: 50px;
+    color: $color-secondray;
+    @include textstyles;
+}
+
+.sub-name {
+    font-family: $font-sahel;
+    font-size: 18px;
+    color: $color-secondray;
+    text-align: center;
+    @include textstyles;
+}
+
+.main-heading {
+    font-family: $font-nastaliq;
+    font-size: 100px;
+    font-weight: 300;
+    color: $color-primray;
+    margin-bottom: 40px;
+}
+
+.sub-heading {
+    font-family: $font-sahel;
+    font-size: 60px;
+    font-weight: 300;
+    color: $color-secondray;
+    margin-bottom: 80px;
+}
+
+.main-btn {
+    width: 170px;
+    height: 45px;
+    font-family: $font-sahel;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: $color-primray;
+    background-color: transparent;
+    border: 1px solid $color-primray;
+    cursor: pointer;
+    transition: all .4s;
+
+    &:hover {
+        background-color: $color-primray;
+        color: $color-dark;
+    }
+}
+
+.card {
+    width: 33.3333%;
+    height: 30vw;
+    position: relative;
+    overflow: hidden;
+
+    &:hover .card-overlay {
+        left: 0;
+    }
+
+    &-overlay {
+        @extend %fullspace;
+        @include flexlayout;
+        flex-direction: column;
+        position: absolute;
+        top: 0;
+        left: -100%;
+        color: $color-white;
+        background-color: rgba($color: $color-primray, $alpha: .6);
+        z-index: 10;
+        transition: left .5s ease-in;
+
+        &-heading {
+            @include textstyles;
+            font-size: 50px;
+            font-family: $font-nastaliq;
+        }
+
+        &-paragraph {
+            @include textstyles;
+            font-size: 30px;
+            font-family: $font-sahel;
+            margin-bottom: 30px
+        }
+
+        &-btn {
+            color: $color-primray;
+            background-color: $color-white;
+            border: 1px solid $color-primray;
+            outline: none;
+            font-size: 14px;
+            font-family: $font-sahel;
+            width: 150px;
+            height: 40px;
+            border-radius: 30px;
+            cursor: pointer;
+        }
+    }
+
+    &-img {
+        @extend %fullspace;
+        object-fit: cover;
+        opacity: .5;
+    }
+}
