@@ -1,4 +1,4 @@
 # Restaurant-Sass
 
 
-![](./images/.screen-shot2.png)
+![](./images/screen-shot2.png)
